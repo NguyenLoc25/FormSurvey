@@ -13,7 +13,7 @@ export default function SurveyPage() {
     e.preventDefault();
 
     try {
-      const response = await fetch("/api/survey", {
+      const response = await fetch("/api/survey/:id", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
