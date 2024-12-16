@@ -1,0 +1,6 @@
+.menu-item {
+    @apply bg-transparent hover:bg-blend-exclusion;
+    &.menu-home {
+        @apply text-lg font-semibold;
+    }
+}

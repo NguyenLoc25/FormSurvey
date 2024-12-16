@@ -1,37 +1,44 @@
 import mongoose from "mongoose";
-import { connectToDatabase } from "@/lib/mongodb";
+import dbConnect, { connectToDatabase } from "@/lib/mongodb";
 import Survey from "@/models/Survey";
 import { NextResponse } from "next/server";
 
-
 export async function POST(req) {
-    try {
-      const body = await req.json(); // Lấy dữ liệu từ body request
-  
-      // Đảm bảo dữ liệu hợp lệ
-      if (!body.label || !body.user || !body.questions || body.questions.length === 0) {
-        return new Response(
-          JSON.stringify({ success: false, message: "Thiếu thông tin khảo sát." }),
-          { status: 400 }
-        );
-      }
-  
-      // Kết nối database và lưu khảo sát
-      await connectToDatabase(); // function kết nối database như trong lib/mongodb.js
-  
-      const newSurvey = new Survey(body);
-      const savedSurvey = await newSurvey.save();
-  
+  try {
+    await dbConnect();
+
+    const { name, email, responses, survey_start_time } = await req.json();
+
+    if (!name || !email || !responses || !survey_start_time) {
       return new Response(
-        JSON.stringify({ success: true, message: "Khảo sát đã được lưu!", data: savedSurvey }),
-        { status: 200 }
-      );
-    } catch (error) {
-      console.error("Lỗi xử lý API:", error);
-      return new Response(
-        JSON.stringify({ success: false, message: "Lỗi xử lý dữ liệu." }),
-        { status: 500 }
+        JSON.stringify({ success: false, error: "All fields are required." }),
+        { status: 400 }
       );
     }
+
+    const survey_end_time = new Date().toISOString(); // Lấy thời gian hiện tại làm thời gian kết thúc khảo sát
+
+    // Tạo khảo sát mới
+    const newSurvey = new Survey({
+      label: "Khảo sát người dùng",
+      user: { name, email },
+      questions: [
+        {
+          question_header: "Bạn hài lòng với dịch vụ của chúng tôi không?",
+          question_type: "text",
+          question_required: true,
+          question_answer: [responses],
+        }
+      ],
+      survey_start_time,  // Thời gian bắt đầu khảo sát
+      survey_end_time,    // Thời gian kết thúc khảo sát
+    });
+
+    await newSurvey.save();
+
+    return new Response(JSON.stringify({ success: true, data: newSurvey }), { status: 201 });
+  } catch (error) {
+    console.error("Error saving survey:", error);
+    return new Response(JSON.stringify({ success: false, error: error.message }), { status: 500 });
   }
-  
+}
