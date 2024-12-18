@@ -3,7 +3,7 @@ import { NavigationMenu, NavigationMenuItem, NavigationMenuList, navigationMenuT
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../app/api/[auth]/[...nextauth]/route";
+import { authOptions } from "../app/api/auth/[...nextauth]/route";
 import { cn } from "@/lib/utils";
 import "./Header.scss";
 import LogoutButton from "./LogoutButton";
@@ -40,7 +40,7 @@ const Header = async () => {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/survey" passHref>
+              <Link href="/question" passHref>
                 <span className={cn(navigationMenuTriggerStyle(), "menu-item hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:scale-125 hover:shadow-lg")}>
                   Survey
                 </span>
