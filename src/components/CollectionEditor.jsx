@@ -90,7 +90,7 @@ export default function CollectionEditor({id}) {
 
     return (
         <div className="m-auto">
-            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Edit Collection</h1>
+            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ">Edit Collection</h1>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col w-full p-3 gap-3">
                     {/* Label */}
@@ -115,7 +115,7 @@ export default function CollectionEditor({id}) {
                     <div className="flex flex-col w-full gap-5">
                         <div className="flex justify-between">
                             <label>Questions</label>
-                            <Button type="button" onClick={() => append({ question_header: "new question", question_type: 0, question_required: false })}>
+                            <Button className="bg-gradient-to-r from-purple-700 to-blue-500 hover:from-purple-500 hover:to-blue-700" type="button " onClick={() => append({ question_header: "new question", question_type: 0, question_required: false })}>
                                 <Plus /> New
                             </Button>
                         </div>
@@ -123,7 +123,7 @@ export default function CollectionEditor({id}) {
                             <div key={item.id} className="question-field">
                                 <div className="flex justify-between">
                                     <h3>Question {index + 1}</h3>
-                                    <Button className="bg-red-700 hover:bg-red-500" type="button" onClick={() => remove(index)}>
+                                    <Button className="bg-gradient-to-r from-purple-700 to-blue-500 hover:from-purple-500 hover:to-blue-700"  type="button" onClick={() => remove(index)}>
                                         <Trash />
                                     </Button>
                                 </div>
@@ -173,7 +173,7 @@ export default function CollectionEditor({id}) {
                             </div>
                         ))}
                     </div>
-                    <Button type="submit" className="w-full md:w-1/2 self-end mt-3 @hover:scale-110">
+                    <Button type="submit" className="bg-gradient-to-r from-purple-700 to-blue-500 hover:from-purple-500 hover:to-blue-700 w-full md:w-1/2 self-end mt-3 @hover:scale-110">
                         Save
                     </Button>
                 </form>
@@ -181,3 +181,7 @@ export default function CollectionEditor({id}) {
         </div>
     );
 }
+
+{/* <Button type="submit" className="bg-gradient-to-r from-purple-700 to-blue-500 hover:from-purple-500 hover:to-blue-700 w-full md:w-1/2 self-end mt-3 @hover:scale-110">
+                        Save
+                    </Button> */}

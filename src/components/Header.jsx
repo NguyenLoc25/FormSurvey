@@ -19,29 +19,29 @@ const Header = async () => {
         {/* Logo */}
         <div className="flex items-center gap-3">
           <img src="/logo.svg" alt="Logo" className="w-8 h-8" />
-          <h1 className="text-lg font-bold tracking-wide">NEXT-form</h1>
+          <h1 className="text-lg font-bold tracking-wide">Survey Web</h1>
         </div>
 
         {/* Navigation Menu */}
         <NavigationMenu>
-          <NavigationMenuList className="hidden md:flex gap-5">
+          <NavigationMenuList className="flex flex-wrap gap-5">
             <NavigationMenuItem>
               <Link href="/" passHref>
-                <span className={cn(navigationMenuTriggerStyle(), "menu-item hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:scale-125 hover:shadow-lg")}>
+                <span className={cn(navigationMenuTriggerStyle(), "menu-item hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg")}>
                   Home
                 </span>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/manage-form" passHref>
-                <span className={cn(navigationMenuTriggerStyle(), "menu-item hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:scale-125 hover:shadow-lg")}>
+                <span className={cn(navigationMenuTriggerStyle(), "menu-item hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg")}>
                   Manage Form
                 </span>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/question" passHref>
-                <span className={cn(navigationMenuTriggerStyle(), "menu-item hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:scale-125 hover:shadow-lg")}>
+                <span className={cn(navigationMenuTriggerStyle(), "menu-item hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg")}>
                   Survey
                 </span>
               </Link>

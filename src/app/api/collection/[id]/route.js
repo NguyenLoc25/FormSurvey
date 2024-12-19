@@ -4,29 +4,30 @@ import Question from "@/models/Question";
 import dbConnect from "@/lib/mongodb";
 import { checkAuth } from "@/lib/utils_server";
 
-export async function GET(req, { params }) {
-  try {
+  export async function GET(req, { params }) {
     const { id } = await params; // Awaiting the result of params
-    console.log("Fetching collection with ID:", id); // Log ID
-    
-    await dbConnect();
-    console.log("Database connected successfully");
+    try {
+      console.log("Fetching collection with ID:", id); // Log ID
+      
+      await dbConnect();
+      console.log("Database connected successfully");
 
-    const collection = await Collection.findById(id)
-      .populate("user")
-      .populate("questions");
-    console.log("Fetched collection:", collection); // Log collection data
-    console.log("Questions:", collection.questions);
+      const collection = await Collection.findById(id)
+        .populate("user")
+        .populate("questions");
+      console.log("Question Header:", collection.questions.map(q => q.question_header));
+      console.log("Fetched collection:", collection); // Log collection data
+      console.log("Questions:", collection.questions);
 
-    return NextResponse.json({ success: true, collection });
-  } catch (error) {
-    console.error("Error fetching collection:", error.message); // Log error
-    return NextResponse.json(
-      { success: false, error: error.message },
-      { status: 400 }
-    );
+      return NextResponse.json({ success: true, collection });
+    } catch (error) {
+      console.error("Error fetching collection:", error.message); // Log error
+      return NextResponse.json(
+        { success: false, error: error.message },
+        { status: 400 }
+      );
+    }
   }
-}
 
 
 

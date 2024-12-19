@@ -1,5 +1,48 @@
-.question-field {
-    @apply border-slate-300 rounded-md border-2 p-2;
-    // Kiểm tra z-index nếu cần
-    z-index: 10;
+@mixin hover-scale-110($hover-color, $default-color) {
+    &:hover {
+      transform: scale(1.10);
+      background-color: $hover-color;
+    }
+    background-color: $default-color;
+  }
+  
+  .collection-editor-container {
+    margin: auto;
+    padding: 1rem;
+  
+    .form-label {
+      font-weight: bold;
+    }
+  
+    .form-control {
+      margin-bottom: 1rem;
+    }
+  
+    .question-field {
+      margin-bottom: 1rem;
+  
+      .question-header {
+        font-size: 1.25rem;
+      }
+  
+      .form-item {
+        margin-bottom: 0.5rem;
+      }
+    }
+  
+    .button-save {
+      width: 100%;
+      max-width: 50%;
+      align-self: flex-end;
+      margin-top: 1rem;
+      @include hover-scale-110(#f87171, #dc2626);
+    }
+  }
+  
+
+  .menu-item {
+    @apply bg-transparent hover:bg-blend-exclusion;
+    &.menu-home {
+        @apply text-lg font-semibold;
+    }
 }

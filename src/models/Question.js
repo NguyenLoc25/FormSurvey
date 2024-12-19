@@ -19,7 +19,6 @@ const QuestionSchema = new mongoose.Schema({
     },
     question_required: {
       type: Boolean,
-      default: false, // Set default value
     },
     // question_answer: [{
     //   type: String,

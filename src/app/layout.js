@@ -32,3 +32,18 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+// export default function RootLayout({ children }) {
+//   return (
+//     <html lang="en">
+//       <body
+//         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-r from-purple-500 to-blue-500 text-white`}
+//       >
+//         <Header />
+//         <div className="flex px-2 md:px-10 lg:px-20">
+//           {children}
+//         </div>
+//       </body>
+//     </html>
+//   );
+// }

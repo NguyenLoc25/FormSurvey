@@ -1,21 +1,14 @@
-// import mongoose, { Schema } from "mongoose";
-// import { question_type } from "./utils";
+const mongoose = require("mongoose");
 
-// const AnswerSchema = new mongoose.Schema({
-//     collection_id:{
-//         type: Schema.Types.ObjectId,
-//         ref: "Collection",
-//         required: true,
-//     },
-//     answer_value: [{
-//         question_id:{
-//             type: Schema.Types.ObjectId,
-//             ref: "Question",
-//         },
-//         value: {
-//             type: String,
-//         }
-//     }],
-// });
+const AnswerSchema = new mongoose.Schema({
+  collection_id: [{ type: mongoose.Schema.Types.ObjectId, ref: "Collection" }], // Mảng ObjectId
+  answers: [
+    {
+      question_id: { type: mongoose.Schema.Types.ObjectId, ref: "Question" },
+      value: { type: String },
+    },
+  ],
+  created_at: { type: Date, default: Date.now },
+});
 
-// export default mongoose.models.Answer || mongoose.model("Answer", AnswerSchema);
+module.exports = mongoose.model("Answer", AnswerSchema);
