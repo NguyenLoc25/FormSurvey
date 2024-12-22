@@ -1,6 +1,6 @@
 export default function SuccessPage() {
   return (
-    <div className="h-screen bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-white">
+    <div className="w-full h-screen bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-white">
       <div className="w-full max-w-screen-md text-center">
         <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl text-white">
           Successful!

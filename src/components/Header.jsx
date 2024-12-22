@@ -18,7 +18,7 @@ const Header = async () => {
       <div className="flex justify-between items-center w-full">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <img src="/logo.svg" alt="Logo" className="w-8 h-8" />
+          {/* <img src="src\components\logo.svg" alt="Logo" className="w-8 h-8" /> */}
           <h1 className="text-lg font-bold tracking-wide">Survey Web</h1>
         </div>
 
@@ -61,13 +61,13 @@ const Header = async () => {
                 <span className="hidden sm:block text-sm">{session.user.name || "User"}</span>
               </div>
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
+            <DropdownMenuContent className="mt-2 w-40 from-red-500 to-blue-500">
+              {/* <DropdownMenuLabel>Your Account</DropdownMenuLabel> */}
+              {/* <DropdownMenuSeparator />
               <DropdownMenuItem>
                 <Link href="/account">Account</Link>
               </DropdownMenuItem>
-              <DropdownMenuSeparator />
+              <DropdownMenuSeparator /> */}
               <DropdownMenuItem>
                 <LogoutButton />
               </DropdownMenuItem>

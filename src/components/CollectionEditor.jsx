@@ -181,7 +181,3 @@ export default function CollectionEditor({id}) {
         </div>
     );
 }
-
-{/* <Button type="submit" className="bg-gradient-to-r from-purple-700 to-blue-500 hover:from-purple-500 hover:to-blue-700 w-full md:w-1/2 self-end mt-3 @hover:scale-110">
-                        Save
-                    </Button> */}
