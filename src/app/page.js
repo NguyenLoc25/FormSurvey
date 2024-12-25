@@ -2,10 +2,11 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-gray-200">
-      <div className="container mx-auto px-6">
+    <div className="min-h-screen  w-full flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-gray-200">
+      <div className="container mt-4 mx-auto px-6">
         <header className="text-center mb-12">
-        <h1 className="text-6xl font-bold text-indigo-800 leading-snug">
+          {/* "text-4xl font-extrabold text-center tracking-tight mb-6 text-indigo-600" */}
+        <h1 className="text-5xl font-bold text-center tracking-tight mb-6 text-indigo-600 leading-snug">
   WebSurvey - Nền tảng khảo sát hiện đại
 </h1>
 
@@ -15,7 +16,7 @@ export default function Home() {
         </header>
 
         <section className="mt-16 text-center">
-          <h2 className="text-3xl font-bold text-blue-800 mb-6">
+          <h2 className="text-3xl font-bold tracking-tight mb-6 text-indigo-600">
             Các tính năng nổi bật
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -49,7 +50,7 @@ export default function Home() {
         </section>
 
         <section className="mt-16 text-center bg-gray-50 py-10">
-  <h2 className="text-3xl font-bold text-blue-800 mb-6">
+  <h2 className="text-3xl font-bold tracking-tight mb-6 text-indigo-600">
     Tại sao chọn WebSurvey?
   </h2>
   <div className="space-y-6">
@@ -79,7 +80,7 @@ export default function Home() {
 {/* <!-- Phần sau đây được chuyển đổi từ trước: --> */}
 
 <section className="mt-16 text-center">
-  <h2 className="text-3xl font-bold text-blue-800 mb-6">
+  <h2 className="text-3xl font-bold tracking-tight mb-6 text-indigo-600">
     Khám phá những tính năng mạnh mẽ của WebSurvey
   </h2>
   <p className="text-lg text-gray-700 mb-6">
@@ -108,12 +109,7 @@ export default function Home() {
       <p className="text-sm text-gray-500 mt-2 italic">"Dữ liệu được bảo vệ an toàn, tôi rất yên tâm khi sử dụng." </p>
     </div>
   </div>
-</section>
-
-
-
-
-        
+</section>        
 
         <footer className="mt-12 text-center">
           <p className="text-gray-600">

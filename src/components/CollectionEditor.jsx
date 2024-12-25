@@ -90,7 +90,7 @@ export default function CollectionEditor({id}) {
 
     return (
         <div className="m-auto">
-            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ">Edit Collection</h1>
+            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight mb-6 text-indigo-600 mt-6 lg:text-5xl ">Edit Collection</h1>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col w-full p-3 gap-3">
                     {/* Label */}
@@ -101,7 +101,10 @@ export default function CollectionEditor({id}) {
                             <FormItem>
                                 <FormLabel>Label</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="YOUR LABEL" {...field} />
+                                    <Input 
+                                        placeholder="YOUR LABEL" {...field} 
+                                        
+                                    />
                                 </FormControl>
                                 <FormDescription>
                                     This is your public display name.
@@ -176,6 +179,8 @@ export default function CollectionEditor({id}) {
                     <Button type="submit" className="bg-gradient-to-r from-purple-700 to-blue-500 hover:from-purple-500 hover:to-blue-700 w-full md:w-1/2 self-end mt-3 @hover:scale-110">
                         Save
                     </Button>
+
+                    
                 </form>
             </Form>
         </div>

@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
-import "./manage.css"
+// import "./manage.css"
 import CreateCollectionButton from "@/components/CreateCollectionButton";
 
 export default async function ManageFormPage() {
@@ -34,8 +34,8 @@ export default async function ManageFormPage() {
     <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-r from-gray-100 to-gray-200">
       <div className="w-full max-w-6xl p-6">
         <div className="flex items-center justify-between mb-8">
-          <h1 className="text-4xl font-bold text-blue-700">
-            Manage Your Forms
+          <h1 className="text-4xl font-bold text-center tracking-tight mb-6 text-indigo-600 mt-4">
+            MANAGE YOUR FORMS
           </h1>
           <CreateCollectionButton />
         </div>
@@ -47,10 +47,10 @@ export default async function ManageFormPage() {
                 key={collection._id}
                 className="p-4 bg-white rounded-lg shadow-md"
               >
-                <h2 className="text-xl font-semibold text-gray-800 mb-2">
+                <h2 className="text-xl font-semibold text-gray-600 mb-2 tracking-tight mb-6 text-indigo-600">
                   {collection.label}
                 </h2>
-                <ul className="text-sm text-gray-600">
+                <ul className="text-sm tracking-tight mb-4 text-indigo-600">
                   {collection.questions.map((questionId) => {
                     const question = questions.find((q) => q._id === questionId);
                     return question ? (

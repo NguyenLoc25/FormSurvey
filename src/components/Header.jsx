@@ -19,7 +19,7 @@ const Header = async () => {
         {/* Logo */}
         <div className="flex items-center gap-3">
           {/* <img src="src\components\logo.svg" alt="Logo" className="w-8 h-8" /> */}
-          <h1 className="text-lg font-bold tracking-wide">Survey Web</h1>
+          <h1 className="text-lg font-bold tracking-wide font-sans">Survey Web</h1>
         </div>
 
         {/* Navigation Menu */}
@@ -27,22 +27,22 @@ const Header = async () => {
           <NavigationMenuList className="flex flex-wrap gap-5">
             <NavigationMenuItem>
               <Link href="/" passHref>
-                <span className={cn(navigationMenuTriggerStyle(), "menu-item hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg")}>
+              <span className={cn(navigationMenuTriggerStyle(), "menu-item font-bold text-lg text-center hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:font-extrabold tracking-wide")}>
                   Home
                 </span>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/manage-form" passHref>
-                <span className={cn(navigationMenuTriggerStyle(), "menu-item hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg")}>
-                  Manage Form
+              <span className={cn(navigationMenuTriggerStyle(), "menu-item font-bold text-lg text-center hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:font-extrabold tracking-wide")}>
+                 Manage Forms
                 </span>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/question" passHref>
-                <span className={cn(navigationMenuTriggerStyle(), "menu-item hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg")}>
-                  Survey
+              <span className={cn(navigationMenuTriggerStyle(), "menu-item font-bold text-lg text-center hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:font-extrabold tracking-wide")}>
+              Survey
                 </span>
               </Link>
             </NavigationMenuItem>

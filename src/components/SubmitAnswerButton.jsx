@@ -33,7 +33,7 @@ export default function SubmitAnswerButton({ collectionId, answers }) {
     } catch (err) {
       router.push("/failed");
       console.error("Error occurred:", err);
-      setError(err.message);
+      // setError(err.message);
     } finally {
       setLoading(false);
     }
@@ -45,12 +45,15 @@ export default function SubmitAnswerButton({ collectionId, answers }) {
   return (
     <div>
       <Button
-        onClick={handleSubmit}
-        type="submit"
-        className="w-full md:w-1/2 self-end mt-3 hover:scale-110"
-      >
-        Submit
-      </Button>
+  onClick={handleSubmit}
+  type="submit"
+  className="w-full mb-8 self-end mt-3 bg-gradient-to-r from-indigo-600 to-purple-700 hover:from-indigo-500 hover:to-purple-800 text-white font-bold py-2 px-4 rounded-lg shadow-lg transform hover:scale-105"
+>
+  Submit
+</Button>
+
+      {loading && <p>Submitting your answers...</p>}
+{error && <p className="text-red-500">{error}</p>}
     </div>
   );
 }
