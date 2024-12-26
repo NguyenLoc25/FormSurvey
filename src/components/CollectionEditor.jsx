@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Label } from "./ui/label";
 import { Checkbox } from "./ui/checkbox";
 import { question_type } from "@/models/utils";
-import "./collectionEditor.scss"
+// import "./collectionEditor.scss"
 import { Delete, Plus, Trash } from "lucide-react";
 
 export default function CollectionEditor({id}) {
