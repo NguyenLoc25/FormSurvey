@@ -3,7 +3,7 @@ import { getToken } from "next-auth/jwt";
 
 export async function middleware(req) {
   const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
-  const protectedRoutes = [ "/account"]; // Add routes to protect
+  const protectedRoutes = ["/manage-form", "/account"]; // Add routes to protect
 
   if (protectedRoutes.some((route) => req.nextUrl.pathname.startsWith(route))) {
     if (!token) {
