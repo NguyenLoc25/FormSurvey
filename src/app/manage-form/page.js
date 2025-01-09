@@ -5,12 +5,19 @@ import CreateCollectionButton from "@/components/CreateCollectionButton";
 
 export default async function ManageFormPage() {
   const session = await getServerSession(authOptions);
+  const baseURL = process.env.NEXTAUTH_URL 
+  ? process.env.NEXTAUTH_URL 
+  : process.env.VERCEL_URL 
+  ? `https://${process.env.VERCEL_URL}` 
+  : "http://localhost:3000";
 
-  let collectionsR = await fetch("http://localhost:3000/api/collection");
-  let collections = await collectionsR.json();
 
-  let questionsR = await fetch("http://localhost:3000/api/question");
-  let questions = await questionsR.json();
+let collectionsR = await fetch(`${baseURL}/api/collection`); // Sửa từ "${baseURL}" thành `${baseURL}`
+let collections = await collectionsR.json();
+
+let questionsR = await fetch(`${baseURL}/api/question`); // Sửa từ "${baseURL}" thành `${baseURL}`
+let questions = await questionsR.json();
+
 
   // console.log("Collections:", collections);
   // console.log("Questions:", questions);

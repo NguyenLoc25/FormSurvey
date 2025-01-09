@@ -14,7 +14,7 @@ export default function QuestionPage() {
   useEffect(() => {
     async function fetchQuestions() {
       try {
-        const response = await fetch('http://localhost:3000/api/question');
+        const response = await fetch('/api/question');
         const data = await response.json();
         setQuestions(data);
       } catch (error) {
